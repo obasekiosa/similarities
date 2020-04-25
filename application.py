@@ -135,7 +135,9 @@ def errorhandler(error):
     """Handle errors"""
     return render_template("error.html", error=error), error.code
 
-
-# https://github.com/pallets/flask/pull/2314
-for code in default_exceptions:
-    app.errorhandler(code)(errorhandler)
+if __name__ == "__main__":
+    # https://github.com/pallets/flask/pull/2314
+    for code in default_exceptions:
+        app.errorhandler(code)(errorhandler)
+    
+    app.run()
