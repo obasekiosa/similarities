@@ -137,7 +137,7 @@ def errorhandler(error):
 
 if __name__ == "__main__":
     # https://github.com/pallets/flask/pull/2314
-    for code in default_exceptions:
-        app.errorhandler(code)(errorhandler)
+    # for code in default_exceptions:
+    #     app.errorhandler(code)(errorhandler)
     
     app.run()
